@@ -1,0 +1,10 @@
+language: clojure
+jdk:
+  - oraclejdk8
+cache:
+  directories:
+  - "$HOME/.lein"
+  - "$HOME/.m2"
+script:
+  - lein cljfmt check
+  - lein test

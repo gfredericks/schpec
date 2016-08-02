@@ -1,6 +1,6 @@
 # schpec
 
-![build status](https://travis-ci.org/gfredericks/schpec.svg?branch=master)
+[![Build Status](https://travis-ci.org/gfredericks/schpec.svg?branch=master)](https://travis-ci.org/gfredericks/schpec)
 
 Schpec is a utility library for clojure.spec.
 

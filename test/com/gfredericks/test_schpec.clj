@@ -26,6 +26,6 @@
               [{:path []
                 :pred '(fn [m] (subset? (set (keys m)) ks))
                 :val sample'
-                :via [::my-excl-keys],
+                :via [::my-excl-keys]
                 :in []}]}
              (s/explain-data ::my-excl-keys sample'))))))

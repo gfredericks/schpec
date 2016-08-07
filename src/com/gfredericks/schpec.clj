@@ -32,3 +32,15 @@
            (limit-keys ks# ~all-keys)
            ks#)
          (fn [] (sg/fmap (fn [m#] (select-keys m# ~all-keys)) (s/gen ks#)))))))
+
+(defmacro xor
+  "Like [[s/or]], but values can only match exactly one spec."
+  [& key-pred-forms]
+  (let [key-pred-forms (set (partition 2 key-pred-forms))
+        opts (mapcat
+              (fn [[name spec :as pair]]
+                (let [preds (for [s (map second (disj key-pred-forms pair))]
+                              `(fn [x#] (not (s/valid? ~s x#))))]
+                  [name `(s/and ~spec ~@preds)]))
+              key-pred-forms)]
+    (eval `(s/or ~@opts))))

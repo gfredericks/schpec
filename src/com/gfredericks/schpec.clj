@@ -43,4 +43,4 @@
                               `(fn [x#] (not (s/valid? ~s x#))))]
                   [name `(s/and ~spec ~@preds)]))
               key-pred-forms)]
-    (eval `(s/or ~@opts))))
+    `(s/or ~@opts)))

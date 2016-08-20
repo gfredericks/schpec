@@ -1,4 +1,4 @@
-(defproject com.gfredericks/schpec "0.1.0"
+(defproject com.gfredericks/schpec "0.1.1-SNAPSHOT"
   :description "A utility library for clojure.spec"
   :url "https://github.com/gfredericks/schpec"
   :license {:name "Eclipse Public License"

@@ -4,12 +4,27 @@
 
 Schpec is a utility library for clojure.spec.
 
+## Obtention
+
+``` clojure
+[com.gfredericks/schpec "0.1.0"]
+```
+
+## Things it has
+
+In the `com.gfredericks.schpec` namespace:
+
+- `xor`: like `s/or` but values can only match exactly one spec
+- `excl-keys`: like `s/keys`, but does not allow extra keys
+
+## Things it could have if it had them
+
 It is currently empty but is intended to be a home for all manner of
 things, such as:
 
-- common specs
+- other common specs
 - generators related to specs
-- helper functions/macros for defining specs
+- other helper functions/macros for defining specs
 - whatever other feature you miss from
   [plumatic/schema](https://github.com/plumatic/schema)
 - etc.

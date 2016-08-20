@@ -29,3 +29,15 @@
                 :via [::my-excl-keys]
                 :in []}]}
              (s/explain-data ::my-excl-keys sample'))))))
+
+(s/def ::my-xor
+  (schpec/xor :x (s/keys :req [::x])
+              :y (s/keys :req [::y])))
+(s/def ::x int?)
+(s/def ::y int?)
+
+(deftest xor-test
+  (is (nil? (s/explain-data ::my-xor {::x 1})))
+  (is (nil? (s/explain-data ::my-xor {::y 1})))
+  (is (some? (s/explain-data ::my-xor {::x 1 ::y 1})))
+  (is (some? (s/explain-data ::my-xor {::y "abc"}))))

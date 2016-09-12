@@ -1,4 +1,5 @@
 (ns com.gfredericks.schpec
+  (:refer-clojure :exclude [alias])
   (:require [clojure.spec :as s]
             [clojure.spec.gen :as sg]
             [clojure.set :as set]))
@@ -44,3 +45,11 @@
                   [name `(s/and ~spec ~@preds)]))
               key-pred-forms)]
     `(s/or ~@opts)))
+
+(defmacro alias
+  "Like clojure.core/alias, but can alias to non-existing namespaces"
+  [alias namespace-sym]
+  `(try (clojure.core/alias ~alias ~namespace-sym)
+        (catch Exception _#
+          (do (create-ns ~namespace-sym)
+              (clojure.core/alias ~alias ~namespace-sym)))))

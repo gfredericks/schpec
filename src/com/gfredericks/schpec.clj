@@ -51,5 +51,5 @@
   [alias namespace-sym]
   `(try (clojure.core/alias ~alias ~namespace-sym)
         (catch Exception _#
-          (do (create-ns ~namespace-sym)
-              (clojure.core/alias ~alias ~namespace-sym)))))
+          (create-ns ~namespace-sym)
+          (clojure.core/alias ~alias ~namespace-sym))))

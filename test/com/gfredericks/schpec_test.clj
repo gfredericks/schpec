@@ -1,4 +1,4 @@
-(ns com.gfredericks.test-schpec
+(ns com.gfredericks.schpec-test
   (:require [com.gfredericks.schpec :as schpec]
             [clojure.spec :as s]
             [clojure.test :refer [deftest is are]]))

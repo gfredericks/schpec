@@ -41,3 +41,10 @@
   (is (nil? (s/explain-data ::my-xor {::y 1})))
   (is (some? (s/explain-data ::my-xor {::x 1 ::y 1})))
   (is (some? (s/explain-data ::my-xor {::y "abc"}))))
+
+(schpec/alias 'p 'person)
+
+(deftest alias-test
+  (let [aliases (ns-aliases 'com.gfredericks.test-schpec)]
+    (is (contains? aliases 'p))
+    (is (= 'person (ns-name (aliases 'p))))))

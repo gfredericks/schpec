@@ -16,6 +16,7 @@ In the `com.gfredericks.schpec` namespace:
 
 - `xor`: like `s/or` but values can only match exactly one spec
 - `excl-keys`: like `s/keys`, but does not allow extra keys
+- `alias`: like `clojure.core/alias`, but can alias to non-existing namespaces
 
 ## Things it could have if it had them
 

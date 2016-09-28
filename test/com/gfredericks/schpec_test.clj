@@ -45,6 +45,6 @@
 (schpec/alias 'p 'person)
 
 (deftest alias-test
-  (let [aliases (ns-aliases 'com.gfredericks.test-schpec)]
+  (let [aliases (ns-aliases 'com.gfredericks.schpec-test)]
     (is (contains? aliases 'p))
     (is (= 'person (ns-name (aliases 'p))))))

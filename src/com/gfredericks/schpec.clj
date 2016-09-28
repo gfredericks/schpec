@@ -55,5 +55,5 @@
          (clojure.core/alias alias namespace-sym))))
 
 (s/fdef alias
-  :args (s/cat :alias simple-symbol? :ns simple-symbol?)
-  :ret nil?)
+        :args (s/cat :alias simple-symbol? :ns simple-symbol?)
+        :ret nil?)

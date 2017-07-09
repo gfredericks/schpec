@@ -9,7 +9,7 @@ Schpec is a utility library for clojure.spec.
 Note that schpec will not attempt to be stable until clojure.spec is stable.
 
 ``` clojure
-[com.gfredericks/schpec "0.1.1"]
+[com.gfredericks/schpec "0.1.2"]
 ```
 
 ## Things it has

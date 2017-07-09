@@ -20,7 +20,7 @@ In the `com.gfredericks.schpec` namespace:
 - `excl-keys`: like `s/keys`, but does not allow extra keys
 - `alias`: like `clojure.core/alias`, but can alias to non-existing namespaces
 
-### `com.gfredericks.schpec.defn+spec/defn+spec`
+### `com.gfredericks.schpec.defn+spec/defn`
 
 A variant of `defn` that allows annotating args with specs, and
 overloading function clauses with specs. Tries each clause in order.
@@ -28,7 +28,7 @@ overloading function clauses with specs. Tries each clause in order.
 E.g.,
 
 ``` clojure
-(defn+spec thomas
+(defn+spec/defn thomas
   ([a :- integer?, b :- boolean?]
    [:int-and-bool a b])
   ([a b]

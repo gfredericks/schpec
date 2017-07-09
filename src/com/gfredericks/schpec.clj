@@ -1,7 +1,7 @@
 (ns com.gfredericks.schpec
   (:refer-clojure :exclude [alias])
-  (:require [clojure.spec :as s]
-            [clojure.spec.gen :as sg]
+  (:require [clojure.spec.alpha :as s]
+            [clojure.spec.gen.alpha :as sg]
             [clojure.set :as set]))
 
 (defn limit-keys

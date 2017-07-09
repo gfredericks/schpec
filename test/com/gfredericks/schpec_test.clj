@@ -23,12 +23,12 @@
     (is (s/valid? ::my-excl-keys sample))
     (let [sample' (assoc sample ::some-other-key 1)]
       (is (= #:clojure.spec.alpha
-             {:problems [{:path [],
-                          :pred '(clojure.core/fn [m] (clojure.set/subset? (clojure.core/set (clojure.core/keys m)) ks)),
-                          :val sample',
-                          :via [:com.gfredericks.schpec-test/my-excl-keys], :in []}]
-              :spec :com.gfredericks.schpec-test/my-excl-keys,
-              :value sample'}
+              {:problems [{:path [],
+                           :pred '(clojure.core/fn [m] (clojure.set/subset? (clojure.core/set (clojure.core/keys m)) ks)),
+                           :val sample',
+                           :via [:com.gfredericks.schpec-test/my-excl-keys], :in []}]
+               :spec :com.gfredericks.schpec-test/my-excl-keys,
+               :value sample'}
              (s/explain-data ::my-excl-keys sample'))))))
 
 (s/def ::my-xor

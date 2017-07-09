@@ -20,6 +20,25 @@ In the `com.gfredericks.schpec` namespace:
 - `excl-keys`: like `s/keys`, but does not allow extra keys
 - `alias`: like `clojure.core/alias`, but can alias to non-existing namespaces
 
+### `com.gfredericks.schpec.defn+spec/defn+spec`
+
+A variant of `defn` that allows annotating args with specs, and
+overloading function clauses with specs. Tries each clause in order.
+
+E.g.,
+
+``` clojure
+(defn+spec thomas
+  ([a :- integer?, b :- boolean?]
+   [:int-and-bool a b])
+  ([a b]
+   [:any-two-args a b])
+  ([a b c :- integer? d & more]
+   [:four-args-1-int+varargs a b c d "here's the varargs ->" more])
+  ([a b c d]
+   [:any-four-args a b c d]))
+```
+
 ## Things it could have if it had them
 
 It is currently empty but is intended to be a home for all manner of

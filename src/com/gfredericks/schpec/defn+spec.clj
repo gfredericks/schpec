@@ -46,7 +46,7 @@
          :fntails
          (s/alt
           :unwrapped-fntail ::fntail
-          :wrapped-fntails (s/* (s/spec ::fntail)))) )
+          :wrapped-fntails (s/* (s/spec ::fntail)))))
 
 (s/fdef defn :args ::defn-args)
 (defmacro defn
